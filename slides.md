@@ -34,7 +34,7 @@ Reverse Q&A:
 -->
 
 ---
-class: dense
+class: table-slide
 ---
 
 # Core Web Vitals
@@ -226,7 +226,7 @@ layout: center
 ---
 
 <div class="flex items-center gap-8">
-  <div class="callout text-xl">Eagerly<br>loading</div>
+  <div class="callout text-3xl font-medium py-3 px-5">Eagerly<br>loading</div>
 
 ```angular-html {3-9}
 @defer {
@@ -314,7 +314,8 @@ layout: center
 ```
 
 ---
-class: dense
+layout: center
+class: table-slide
 ---
 
 | Title | Description | Function param |
@@ -374,6 +375,8 @@ Is a JavaScript rendering technique where the final HTML content and user interf
 </div>
 
 ---
+class: flow-slide
+---
 
 # Client Side Rendering (CSR)
 
@@ -425,6 +428,8 @@ The page HTML is <span class="accent">generated at build time</span>.
 </div>
 
 ---
+class: flow-slide
+---
 
 # Static Site Generation (SSG)
 
@@ -470,6 +475,8 @@ The browser then displays the fully rendered page without running any client-sid
 
 </div>
 
+---
+class: flow-slide
 ---
 
 # Server Side Rendering (SSR)
@@ -700,7 +707,8 @@ Nei caricamenti successivi (come quando si naviga tra le pagine tramite routerLi
 -->
 
 ---
-class: dense
+layout: center
+class: table-slide
 ---
 
 | Title | Description |
@@ -762,6 +770,7 @@ Il sistema di componenti e dipendenze di Angular è gerarchico, quindi per idrat
 
 ---
 layout: center
+class: code-wide
 ---
 
 ```ts {9}
@@ -851,7 +860,7 @@ Senior Frontend Engineer @ Onpier
 
   <div class="flex items-start gap-8">
     <div class="flex flex-col items-center gap-2">
-      <img src="/src/qrcode_allmylinks.png" alt="QR code to all my links" class="qr-code w-48 h-48" />
+      <img src="/src/qrcode_allmylinks.png" alt="QR code to all my links" class="qr-code w-36 h-36" />
       <span class="text-sm caption">All my links</span>
     </div>
     <div class="flex flex-col justify-center gap-1 text-sm">
@@ -862,7 +871,7 @@ Senior Frontend Engineer @ Onpier
   </div>
 
   <div class="flex-shrink-0">
-    <img src="/src/profile.png" alt="Giorgio Galassi" class="rounded-full w-60 h-60 object-cover" />
+    <img src="/src/profile.png" alt="Giorgio Galassi" class="rounded-full w-72 h-72 object-cover" />
   </div>
 
 </div>
