@@ -12,7 +12,7 @@ fonts:
   sans: Roboto
   mono: Roboto Mono
 layout: image
-image: /src/01-opener.png
+image: /01-opener.png
 ---
 
 <!--
@@ -21,7 +21,7 @@ Canva page 1. Pixel-art opener, exported as an image.
 
 ---
 layout: image
-image: /src/02-reverse-card.png
+image: /02-reverse-card.png
 footer: false
 ---
 
@@ -62,7 +62,7 @@ Quindi abbiamo capito che...
 
 ---
 layout: image
-image: /src/04-boromir.png
+image: /04-boromir.png
 footer: false
 ---
 
@@ -89,7 +89,7 @@ layout: center
 
 ---
 layout: image
-image: /src/06-map-defer.png
+image: /06-map-defer.png
 footer: false
 ---
 
@@ -107,27 +107,14 @@ Deferrable views, also known as <span class="accent">@defer</span> blocks, reduc
 layout: center
 ---
 
+<!-- Canva pages 8–13: one slide, each click reveals the next block (Shiki Magic Move) -->
+
+````md magic-move
 ```angular-html
 @defer {
   <calendar-cmp />
 }
 ```
-
-<!--
-Per essere caricati in modo deferito, i componenti/direttive/pipe in un blocco @defer devono:
-
-1. Essere standalone
-2. Non essere usati fuori dal blocco @defer nello stesso file
-
-Le dipendenze transitive possono anche stare in un NgModule.
-
-Angular genera import dinamici per ogni elemento deferito e mostra il contenuto solo quando tutti sono pronti — senza garantire l’ordine di caricamento.
--->
-
----
-layout: center
----
-
 ```angular-html {3-5}
 @defer {
   <calendar-cmp />
@@ -135,17 +122,6 @@ layout: center
   <img src="placeholder.png" />
 }
 ```
-
-<!--
-@placeholder mostra un contenuto provvisorio finché non si carica il contenuto deferito.
-
-È opzionale, ma alcuni trigger - vedremo in breve cosa sono - lo richiedono.
--->
-
----
-layout: center
----
-
 ```angular-html {3}
 @defer {
   <calendar-cmp />
@@ -153,15 +129,6 @@ layout: center
   <img src="placeholder.png" />
 }
 ```
-
-<!--
-Supporta un parametro minimum per evitare sfarfallii e garantire una durata minima della visualizzazione.
--->
-
----
-layout: center
----
-
 ```angular-html {5-7}
 @defer {
   <calendar-cmp />
@@ -171,17 +138,6 @@ layout: center
   <img alt="loading..." src="loading.gif" />
 }
 ```
-
-<!--
-@loading mostra contenuto durante il caricamento delle dipendenze deferite.
-
-È opzionale, ma sostituisce il @placeholder appena inizia il caricamento.
--->
-
----
-layout: center
----
-
 ```angular-html {5}
 @defer {
   <calendar-cmp />
@@ -191,20 +147,6 @@ layout: center
   <img alt="loading..." src="loading.gif" />
 }
 ```
-
-<!--
-Accetta due parametri:
-
-1. minimum: durata minima di visualizzazione del contenuto.
-2. after: ritardo prima di mostrare il contenuto.
-
-Entrambi i timer partono quando il caricamento inizia.
--->
-
----
-layout: center
----
-
 ```angular-html {7-9}
 @defer {
   <calendar-cmp />
@@ -216,9 +158,36 @@ layout: center
   <p>Failed to load large component.</p>
 }
 ```
+````
 
 <!--
-Il blocco @error è un blocco opzionale che viene mostrato se il caricamento delle dipendenze deferite fallisce.
+Per essere caricati in modo deferito, i componenti/direttive/pipe in un blocco @defer devono:
+
+1. Essere standalone
+2. Non essere usati fuori dal blocco @defer nello stesso file
+
+Le dipendenze transitive possono anche stare in un NgModule.
+
+Angular genera import dinamici per ogni elemento deferito e mostra il contenuto solo quando tutti sono pronti — senza garantire l’ordine di caricamento.
+
+[click] @placeholder mostra un contenuto provvisorio finché non si carica il contenuto deferito.
+
+È opzionale, ma alcuni trigger - vedremo in breve cosa sono - lo richiedono.
+
+[click] Supporta un parametro minimum per evitare sfarfallii e garantire una durata minima della visualizzazione.
+
+[click] @loading mostra contenuto durante il caricamento delle dipendenze deferite.
+
+È opzionale, ma sostituisce il @placeholder appena inizia il caricamento.
+
+[click] Accetta due parametri:
+
+1. minimum: durata minima di visualizzazione del contenuto.
+2. after: ritardo prima di mostrare il contenuto.
+
+Entrambi i timer partono quando il caricamento inizia.
+
+[click] Il blocco @error è un blocco opzionale che viene mostrato se il caricamento delle dipendenze deferite fallisce.
 -->
 
 ---
@@ -336,7 +305,7 @@ layout: center
 
 ---
 layout: image
-image: /src/21-map-hybrid.png
+image: /21-map-hybrid.png
 footer: false
 ---
 
@@ -664,7 +633,7 @@ Ed è da questo momento in poi che il @defer ha un altro potentissimo potere e d
 
 ---
 layout: image
-image: /src/42-super-defer.png
+image: /42-super-defer.png
 footer: false
 ---
 
@@ -814,13 +783,13 @@ layout: center
 
 ---
 layout: image
-image: /src/50-map-conclusion.png
+image: /50-map-conclusion.png
 footer: false
 ---
 
 ---
 layout: image
-image: /src/51-rocket.png
+image: /51-rocket.png
 footer: false
 ---
 
@@ -860,7 +829,7 @@ Senior Frontend Engineer @ Onpier
 
   <div class="flex items-start gap-8">
     <div class="flex flex-col items-center gap-2">
-      <img src="/src/qrcode_allmylinks.png" alt="QR code to all my links" class="qr-code w-36 h-36" />
+      <img src="/qrcode_allmylinks.png" alt="QR code to all my links" class="qr-code w-36 h-36" />
       <span class="text-sm caption">All my links</span>
     </div>
     <div class="flex flex-col justify-center gap-1 text-sm">
@@ -871,7 +840,7 @@ Senior Frontend Engineer @ Onpier
   </div>
 
   <div class="flex-shrink-0">
-    <img src="/src/profile.png" alt="Giorgio Galassi" class="rounded-full w-72 h-72 object-cover" />
+    <img src="/profile.png" alt="Giorgio Galassi" class="rounded-full w-72 h-72 object-cover" />
   </div>
 
 </div>
