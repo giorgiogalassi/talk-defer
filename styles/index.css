@@ -1,0 +1,249 @@
+/* ---------------------------------------------------------------
+   Palette. Accent and muted text are tuned per colour scheme so text
+   passes WCAG AA (4.5:1) on every background it sits on: slide, callout,
+   code block. Brand orange #c2603a was 4.18:1 on white, 4.49:1 on dark.
+   --------------------------------------------------------------- */
+:root {
+  --accent: #ad5230;
+  --on-accent: #ffffff;
+  --muted-text: #6b6b72;
+  --footer-text: #707070;
+}
+html.dark {
+  --accent: #d9764f;
+  --on-accent: #121212;
+  --muted-text: #a3a3ad;
+  --footer-text: #8a8a8a;
+}
+
+/* Constrain images on all slides without affecting presenter UI */
+.slidev-layout img {
+  max-height: 260px;
+  max-width: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.slidev-layout img.qr-code {
+  margin: 0;
+}
+
+.callout {
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  padding: 0.2em 0.8em;
+  border-radius: 0 4px 4px 0;
+  margin: 0.75em 0;
+}
+
+.slidev-layout table th {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.thank-you-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.tag {
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--accent);
+  padding: 0.2em 0.75em;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+/* ---------------------------------------------------------------
+   Vertical density — keeps content-heavy slides inside the viewport.
+   Global, conservative. Add `class: dense` to a slide's frontmatter
+   for a second, stronger pass on the few that still overflow.
+   --------------------------------------------------------------- */
+
+.slidev-layout h1 {
+  margin-bottom: 0.45em;
+  line-height: 1.15;
+}
+
+.slidev-layout table {
+  margin: 0.5em 0;
+}
+
+.slidev-layout table th,
+.slidev-layout table td {
+  padding-top: 0.28em;
+  padding-bottom: 0.28em;
+  line-height: 1.35;
+}
+
+.slidev-layout ul,
+.slidev-layout ol {
+  margin: 0.5em 0;
+}
+
+.slidev-layout li {
+  margin: 0.22em 0;
+  line-height: 1.45;
+}
+
+.slidev-layout p {
+  margin: 0.5em 0;
+  line-height: 1.5;
+}
+
+.slidev-layout .slidev-code,
+.slidev-layout pre {
+  margin: 0.5em 0;
+  line-height: 1.4;
+}
+
+.slidev-layout .callout {
+  margin: 0.55em 0;
+}
+
+/* Stronger pass — opt in per slide with `class: dense` */
+.slidev-layout.dense {
+  font-size: 0.92em;
+}
+
+.slidev-layout.dense table th,
+.slidev-layout.dense table td {
+  padding-top: 0.18em;
+  padding-bottom: 0.18em;
+  line-height: 1.28;
+}
+
+.slidev-layout.dense li {
+  margin: 0.12em 0;
+  line-height: 1.38;
+}
+
+.slidev-layout.dense p {
+  margin: 0.38em 0;
+}
+
+.slidev-layout.dense .slidev-code,
+.slidev-layout.dense pre {
+  font-size: 0.85em;
+  line-height: 1.32;
+}
+
+/* Projector readability: code a notch above Slidev's 12px default */
+:root {
+  --slidev-code-font-size: 14px;
+  --slidev-code-line-height: 22px;
+}
+
+/* ---------------------------------------------------------------
+   talk-defer additions
+   --------------------------------------------------------------- */
+
+/* Full-bleed illustration slides (pixel art exported from the Canva
+   original). Background image, so the global img max-height doesn't apply. */
+.slidev-layout.cover-art {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Big centred statement, used for section titles and DEMO */
+.statement {
+  font-size: 4.2rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* Definition box, replaces the Canva pixel frames */
+.definition {
+  border: 3px solid currentColor;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--accent) 70%, transparent);
+  padding: 1.4em 1.8em;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+/* Request → server → browser flow */
+.flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1.4fr;
+  align-items: start;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.flow .step {
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: 6px;
+  padding: 0.8em 1em;
+  min-height: 6rem;
+}
+.flow .step b {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.3em;
+}
+.flow .arrow {
+  font-size: 2rem;
+  color: var(--accent);
+  align-self: center;
+}
+.flow ol {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 0.9rem;
+}
+
+.star-list {
+  list-style: none;
+  font-size: 2.2rem;
+  line-height: 1.6;
+  padding: 0;
+}
+.star-list li::before {
+  content: '⭐ ';
+}
+
+/* Code-only slides (layout: center) carry one snippet: size it for the room */
+.slidev-layout.center {
+  --slidev-code-font-size: 24px;
+  --slidev-code-line-height: 36px;
+}
+
+.slidev-layout ul.star-list {
+  list-style: none;
+  padding-left: 0;
+}
+.slidev-layout ul.star-list li {
+  list-style: none;
+  margin: 0.2em 0;
+}
+
+.slidev-layout .flow {
+  font-size: 1.1rem;
+}
+.slidev-layout .flow ol {
+  font-size: 1rem;
+}
+
+.routes-code {
+  --slidev-code-font-size: 17px;
+  --slidev-code-line-height: 24px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "good-things-come-to-those-who-defer",
+  "version": "1.0.0",
+  "description": "Good Things Come to Those Who @defer — Giorgio Galassi",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export",
+    "export-dark": "slidev export --dark"
+  },
+  "author": "Giorgio Galassi",
+  "license": "ISC",
+  "dependencies": {
+    "@slidev/cli": "^52.15.2",
+    "@slidev/theme-default": "^0.25.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.63.0"
+  }
+}
