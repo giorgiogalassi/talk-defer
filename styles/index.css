@@ -244,6 +244,58 @@ html.dark {
 }
 
 .routes-code {
-  --slidev-code-font-size: 17px;
-  --slidev-code-line-height: 24px;
+  --slidev-code-font-size: 15px;
+  --slidev-code-line-height: 19px;
+}
+
+/* ---------------------------------------------------------------
+   Room polish (2026-10-26): sizes tuned against 1280×720 renders
+   --------------------------------------------------------------- */
+
+/* Non-highlighted code lines: Slidev's 0.3 is unreadable on a projector */
+.slidev-code .slidev-code-dishonored {
+  opacity: 0.45;
+}
+
+/* Definition boxes: a notch larger, they are read aloud */
+.slidev-layout .definition {
+  font-size: 1.55rem;
+  max-width: 50rem;
+}
+
+/* Flow slides: heading stays on top, the flow centres in the space left */
+.slidev-layout.flow-slide {
+  display: flex;
+  flex-direction: column;
+}
+.slidev-layout.flow-slide .flow {
+  margin: auto 0;
+  align-items: stretch;
+  font-size: 1.3rem;
+}
+.slidev-layout.flow-slide .flow .step {
+  padding: 1em 1.2em;
+}
+.slidev-layout.flow-slide .flow ol {
+  font-size: 1.05rem;
+}
+.flow .step b.inline {
+  display: inline;
+  margin: 0;
+}
+
+/* Reference tables (triggers, CWV): full width, readable size */
+.slidev-layout.table-slide table {
+  width: 100%;
+  font-size: 1.2rem;
+}
+.slidev-layout.table-slide th,
+.slidev-layout.table-slide td:first-child {
+  white-space: nowrap;
+}
+
+/* Wide code (long single lines) on a centred slide */
+.slidev-layout.center.code-wide {
+  --slidev-code-font-size: 20px;
+  --slidev-code-line-height: 30px;
 }
